@@ -13,9 +13,10 @@ AlphaBot adalah bot strategi yang dikembangkan untuk berkompetisi dalam permaina
 ## Instalasi Dependens 🔨
 
 1. Clone repositori ini dan pindah ke direktori root:
-
+     ```
     git clone https://github.com/haziqam/tubes1-IF2110-bot-starter-pack.git
     cd ./tubes1-IF211-bot-starter-pack
+     ```
     
 
 2. Instal seluruh dependensi menggunakan pip:
