@@ -83,7 +83,7 @@ class AlphaBot(BaseLogic):
         if candidate_diamonds:
             candidate_diamonds.sort(key=lambda x: (-x[3], x[1]))
             target = candidate_diamonds[0][0].position
-            return self.get_direction_Adv(current_position.x, current_position.y, target.x, target.y, [])
+            return self.get_direction_Adv(current_position.x, current_position.y, target.x, target.y, teleporters)
 
         if red_buttons and props.diamonds < props.inventory_size:
             btn = red_buttons[0].position
