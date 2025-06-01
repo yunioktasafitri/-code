@@ -1,54 +1,60 @@
-# Tubes 1 Strategi Algoritma – AlphaCode
+# AlphaBot – Tugas Besar 1 IF2211 Strategi Algoritma
 
-Bot ini dibuat untuk Tugas Besar 1 mata kuliah IF2211 Strategi Algoritma tahun 2024/2025.
+AlphaBot adalah bot yang dikembangkan untuk permainan Diamonds pada Tugas Besar 1 mata kuliah IF2211 Strategi Algoritma tahun ajaran 2024/2025. Bot ini menggunakan pendekatan algoritma greedy berbasis density untuk mengumpulkan diamond sebanyak-banyaknya dan menghindari risiko dalam permainan.
 
-## Penjelasan Singkat Algoritma Greedy yang Diimplementasikan
+## 🧠 Penjelasan Singkat Algoritma Greedy
 
-AlphaBot menggunakan algoritma **greedy berdasarkan density**, yaitu rasio antara nilai diamond dan jarak terdekat untuk mencapainya:
-
-### Strategi utama:
-- Memprioritaskan diamond dengan density tertinggi (red diamond lebih diprioritaskan dengan bobot 1.5×)
-- Menghindari posisi bot musuh untuk menghindari tackle
-- Menggunakan teleporter jika jalurnya lebih efisien daripada jalur langsung
-- Kembali ke base jika:
-  - Inventory penuh
-  - Waktu hampir habis dan masih membawa diamond
-- Pergi ke tombol merah jika diamond di peta habis
-- Melakukan eksplorasi fallback jika tidak ada langkah lain
+Bot mengambil keputusan berdasarkan nilai density, yaitu rasio antara nilai diamond dengan jarak terdekat menuju diamond tersebut.
+Strategi utama AlphaBot meliputi:AlphaBot menggunakan algoritma **greedy berdasarkan density**, yaitu rasio antara nilai diamond dan jarak terdekat untuk mencapainya:
+- Memilih diamond dengan density tertinggi (red diamond memiliki bobot 1.5×).
+- Menghindari bot lawan untuk menghindari tackle.
+- Menggunakan teleporter jika lebih efisien.
+- Kembali ke base jika inventory penuh atau waktu hampir habis.
+- Menuju tombol merah jika tidak ada diamond tersisa.
+- Melakukan eksplorasi acak jika tidak ada opsi optimal.
+Strategi ini memastikan bot mendapatkan poin sebanyak mungkin dengan tetap mempertimbangkan efisiensi dan keamanan.
 
 Strategi ini bertujuan untuk memaksimalkan jumlah poin yang dikumpulkan dalam waktu terbatas dengan tetap memperhitungkan risiko.
 
 ---
 
-## Requirement & Instalasi
+## ⚙️ Requirement & Instalasi
 
 ### 1. Python
-- Python versi **3.9 atau lebih baru**
-- Pastikan `pip` sudah tersedia di environment
+- Python >= 3.x
+- Pastikan pip sudah tersedia
 
-### 2. Install dependensi
-Jalankan perintah berikut:
+
+### 2. Instalasi Dependensi
+Jalankan perintah berikut di direktori bot:
 
 ```bash
 pip install requests dacite colorama
+```
 
-Node.js (untuk game engine)
+### 3. Node.js
+- Dibutuhkan untuk menjalankan game engine (frontend + backend)
 
-Langkah Menjalankan Program
-A. Jalankan Game Engine
+## 🚀 Langkah Menjalankan Program
+### A. Menjalankan Game Engine
+```bash
 git clone https://github.com/yunioktasafitri/Tubes1_alphacode.git
 cd tubes1-IF2211-game-engine
 npm install
 npm run build
-
-Jalankan frontend visualisasi:
+```
+Untuk menjalankan frontend visualisasi:
+```bash
 npm run start
-
-B. Jalankan Bot
+```
+### B. Menjalankan Bot
+```bash
 cd Tubes1_alpha-code
-pip3 install requests dacite colorama
+pip install requests dacite colorama
 python src/main.py --name "AlphaBot" --email "alpha@bot.com" --password "123" --team "alpha-code"
+```
 
-Author
-M. Zahran Dhiyaul Haq – 123140120
+### 👤 Author
+- Yuni Okta Safitri - 123140213
+- M. Zahran Dhiyaul Haq – 123140120
 
