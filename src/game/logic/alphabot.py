@@ -46,7 +46,6 @@ class AlphaBot(BaseLogic):
         diamonds = board.diamonds
         enemies = [b for b in all_bots if not self.position_equals(b.position, current_position)]
 
-        # Prioritaskan red button jika ada yang jaraknya <= 5 blok
         nearest_btn = None
         min_btn_dist = float('inf')
         for btn in red_buttons:
@@ -56,12 +55,6 @@ class AlphaBot(BaseLogic):
                 min_btn_dist = dist_btn
         if nearest_btn:
             return get_direction(current_position.x, current_position.y, nearest_btn.position.x, nearest_btn.position.y)
-
-        # Setiap 15 detik cari dan tekan red button
-        time_left = props.milliseconds_left // 1000
-        if red_buttons and (time_left % 15 == 0):
-            btn = red_buttons[0].position
-            return get_direction(current_position.x, current_position.y, btn.x, btn.y)
 
         candidate_diamonds = []
         for d in diamonds:
@@ -81,15 +74,16 @@ class AlphaBot(BaseLogic):
                 density = (1.5 * points) / best_dist if best_dist > 0 else float('inf')
                 candidate_diamonds.append((d, best_dist, points, density))
 
+        time_left = props.milliseconds_left <= 10000
         steps_to_base = abs(current_position.x - props.base.x) + abs(current_position.y - props.base.y)
         if props.diamonds >= props.inventory_size or (steps_to_base + 2 >= time_left and props.diamonds > 0):
             return self.get_direction_Adv(current_position.x, current_position.y,
-                                          props.base.x, props.base.y, [])
+                                          props.base.x, props.base.y, teleporters)
 
         if candidate_diamonds:
             candidate_diamonds.sort(key=lambda x: (-x[3], x[1]))
             target = candidate_diamonds[0][0].position
-            return self.get_direction_Adv(current_position.x, current_position.y, target.x, target.y, teleporters)
+            return self.get_direction_Adv(current_position.x, current_position.y, target.x, target.y, [])
 
         if red_buttons and props.diamonds < props.inventory_size:
             btn = red_buttons[0].position
