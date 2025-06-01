@@ -46,7 +46,18 @@ class AlphaBot(BaseLogic):
         diamonds = board.diamonds
         enemies = [b for b in all_bots if not self.position_equals(b.position, current_position)]
 
-        # Tambahkan strategi: setiap 15 detik cari dan tekan red button
+        # Prioritaskan red button jika ada yang jaraknya <= 5 blok
+        nearest_btn = None
+        min_btn_dist = float('inf')
+        for btn in red_buttons:
+            dist_btn = abs(current_position.x - btn.position.x) + abs(current_position.y - btn.position.y)
+            if dist_btn <= 5 and dist_btn < min_btn_dist:
+                nearest_btn = btn
+                min_btn_dist = dist_btn
+        if nearest_btn:
+            return get_direction(current_position.x, current_position.y, nearest_btn.position.x, nearest_btn.position.y)
+
+        # Setiap 15 detik cari dan tekan red button
         time_left = props.milliseconds_left // 1000
         if red_buttons and (time_left % 15 == 0):
             btn = red_buttons[0].position
