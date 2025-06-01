@@ -1,4 +1,4 @@
-# Tubes 1 Strategi Algoritma – AlphaBot
+# Tubes 1 Strategi Algoritma – AlphaCode
 
 Bot ini dibuat untuk Tugas Besar 1 mata kuliah IF2211 Strategi Algoritma tahun 2024/2025.
 
