@@ -46,6 +46,12 @@ class AlphaBot(BaseLogic):
         diamonds = board.diamonds
         enemies = [b for b in all_bots if not self.position_equals(b.position, current_position)]
 
+        # Tambahkan strategi: setiap 15 detik cari dan tekan red button
+        time_left = props.milliseconds_left // 1000
+        if red_buttons and (time_left % 15 == 0):
+            btn = red_buttons[0].position
+            return get_direction(current_position.x, current_position.y, btn.x, btn.y)
+
         candidate_diamonds = []
         for d in diamonds:
             dist_us = abs(d.position.x - current_position.x) + abs(d.position.y - current_position.y)
@@ -65,7 +71,6 @@ class AlphaBot(BaseLogic):
                 candidate_diamonds.append((d, best_dist, points, density))
 
         steps_to_base = abs(current_position.x - props.base.x) + abs(current_position.y - props.base.y)
-        time_left = props.milliseconds_left // 1000
         if props.diamonds >= props.inventory_size or (steps_to_base + 2 >= time_left and props.diamonds > 0):
             return self.get_direction_Adv(current_position.x, current_position.y,
                                           props.base.x, props.base.y, [])
