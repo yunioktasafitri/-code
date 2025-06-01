@@ -1,65 +1,64 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# 💎 Etimo Diamonds 2
+# 💎 Etimo Diamonds 2 — AlphaBot Edition (IF211)
 
-Diamonds is a programming challenge. Program a bot and compete to get the highest score. For more information:
+AlphaBot adalah bot strategi yang dikembangkan untuk berkompetisi dalam permainan Etimo Diamonds 2 – sebuah tantangan pemrograman berbasis papan di mana bot bersaing untuk mengumpulkan diamond sebanyak mungkin sebelum waktu habis.
 
--   [Project Specification](https://docs.google.com/document/d/13cbmMVXviyu8eKQ6heqgDzt4JNNMeAZO/edit)
--   [Get Started with Diamonds](https://docs.google.com/document/d/1L92Axb89yIkom0b24D350Z1QAr8rujvHof7-kXRAp7c/edit)
+🎓 Project ini dibuat sebagai bagian dari Tugas Besar mata kuliah IF211 – Strategi Algoritma pada Program Studi Teknik Informatika, Institut Teknologi Sumatera (ITERA).
 
-## Installing Dependencies 🔨
+📚 Referensi
+-   [Spesifikasi Permainan](https://docs.google.com/document/d/13cbmMVXviyu8eKQ6heqgDzt4JNNMeAZO/edit)
+-   [Panduan Awal Bermain Diamonds](https://docs.google.com/document/d/1L92Axb89yIkom0b24D350Z1QAr8rujvHof7-kXRAp7c/edit)
 
-1. Clone this repository and move to the root of this project's directory
+## Instalasi Dependens 🔨
 
-    ```
+1. Clone repositori ini dan pindah ke direktori root:
+     ```
     git clone https://github.com/haziqam/tubes1-IF2110-bot-starter-pack.git
-    cd ./tubes1-IF2110-bot-starter-pack
-    ```
+    cd ./tubes1-IF211-bot-starter-pack
+     ```
+    
 
-2. Install dependencies
+2. Instal seluruh dependensi menggunakan pip:
 
     ```
     pip install -r requirements.txt
     ```
 
-## How to Run 💻
+## 💻 Cara Menjalankan Bot
 
-1. To run one bot
-
-    ```
-    python main.py --logic Random --email=your_email@example.com --name=your_name --password=your_password --team etimo
-    ```
-
-2. To run multiple bots simultaneously
-
-    For Windows
+Menjalankan 1 Bot
+### Menjalankan Beberapa Bot Sekaligus
+#### Untuk Windows
 
     ```
     ./run-bots.bat
     ```
 
-    For Linux / (possibly) macOS
+##### Untuk Linux / macOS
 
     ```
     ./run-bots.sh
     ```
-
-    <b>Before executing the script, make sure to change the permission of the shell script to enable executing the script (for linux/macOS)</b>
-
+## Note:
+Pastikan Anda memberikan izin eksekusi pada file .sh terlebih dahulu:
     ```
-    chmod +x run-bots.sh
+   chmod +x run-bots.sh
     ```
 
-#### Note:
+#### ⚠️ Catatan Penting
+-   Gunakan email dan nama yang unik untuk setiap bot saat menjalankan beberapa bot.
+-   Email bisa sembarang selama formatnya valid (contoh: bot1@example.com).
+-   Nama dan password tidak boleh mengandung spasi.
 
--   If you run multiple bots, make sure each emails and names are unique
--   The email could be anything as long as it follows a correct email syntax
--   The name, and password could be anything without any space
+  ## 🤖 Tentang AlphaBot
 
-## Credits 🪙
+AlphaBot menggunakan pendekatan strategi berbasis evaluasi posisi dan kepadatan diamond di sekitar papan. Bot akan mempertimbangkan jarak, skor diamond, serta posisi lawan untuk menentukan gerakan terbaik. Jika inventory penuh, bot secara otomatis akan kembali ke home base. Bot juga menghindari lawan jika memungkinkan dan dapat memanfaatkan fitur seperti teleporter dan red button.
 
-This repository is adapted from https://github.com/Etimo/diamonds2
+## Credits
 
-Some code in this repository is adjusted to fix some issues in the original repository and to adapt to the requirements of Algorithm Strategies course (IF2211), Informatics Undergraduate Program, ITB.
+Repositori ini diadaptasi dari Etimo/diamonds2.
 
-©️ All rights and credits reserved to [Etimo](https://github.com/Etimo)
+Sebagian kode telah dimodifikasi untuk menyesuaikan kebutuhan tugas mata kuliah IF211 Strategi Algoritma – Teknik Informatika ITERA.
+
+©️ Hak cipta dan penghargaan sepenuhnya untuk Etimo.ub.com/Etimo)
