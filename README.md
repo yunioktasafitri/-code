@@ -1,6 +1,6 @@
 # Tubes 1 Strategi Algoritma – AlphaBot
 
-Bot ini dibuat untuk Tugas Besar 1 mata kuliah IF2211 Strategi Algoritma tahun 2023/2024.
+Bot ini dibuat untuk Tugas Besar 1 mata kuliah IF2211 Strategi Algoritma tahun 2024/2025.
 
 ## Penjelasan Singkat Algoritma Greedy yang Diimplementasikan
 
