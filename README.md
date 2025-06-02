@@ -51,7 +51,7 @@ npm run start
 ```bash
 cd Tubes1_alpha-code
 pip install requests dacite colorama
-python src/main.py --name "AlphaBot" --email "alpha@bot.com" --password "123" --team "alpha-code"
+python src/main.py --name "AlphaBot" --email "alpha@bot.com" --password "123456" --team "etimo"
 ```
 
 ### 👤 Author
